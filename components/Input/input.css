@@ -1,0 +1,23 @@
+.filter-input {
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 80%;
+    box-sizing: border-box;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter {
+    margin-left: 2%;
+}
+.filter-select {
+    padding: 8px;
+    display: flex;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}

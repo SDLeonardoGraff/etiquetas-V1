@@ -1,0 +1,25 @@
+[
+    {
+        "empresa": "FARMIGOS--CERQUILHO-SP",
+        "cliente": "SD INFORMÁTICA",
+        "pedido": 452,
+        "cpf/cnpj": "12531172000170",
+        "enderaco": "AV BENJAMIN CONSTANT",
+        "bairro": "CENTRO",
+        "cidade": "Lajeado",
+        "uf": "RS",
+        "cep": "95900140"
+    },
+    {
+        "empresa": "FARMIGOS--CERQUILHO-SP",
+        "cliente": "Marines Meiado Ruesch - MR Cosméticos",
+        "pedido": 683,
+        "cpf/cnpj": "055.996.349-14 ",
+        "telefone": "19984569039",
+        "enderaco": "Rua Padre Francisco P. de Cabral Vasconcellos 1408",
+        "bairro": "Parque das Nações",
+        "cidade": "Indaiatuba",
+        "uf": "SP",
+        "cep": "13346080"
+    }
+]

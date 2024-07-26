@@ -1,0 +1,45 @@
+.options {
+    display: flex;
+    flex-direction: column; /* Alinha os botões verticalmente */
+    justify-content: center;
+    align-items: center;
+    background-color: #333333;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    animation: slideDown 0.3s ease-out;
+    margin-left: 250px;
+    margin-right: 250px;
+    position: absolute;
+}
+
+.optionButton {
+    margin-bottom: 10px; /* Espaçamento inferior para separar os botões */
+    padding: 10px 20px;
+    border: none;
+    background-color: #1DB954;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Remove a margem inferior do último botão */
+.optionButton:last-child {
+    margin-bottom: 0;
+}
+
+
+.optionButton:hover {
+    background-color: #555;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

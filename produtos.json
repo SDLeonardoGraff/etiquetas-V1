@@ -1,0 +1,17 @@
+[
+    {
+        "nome": "Produto 1",
+        "codigo": 1845189752,
+        "valor": "R$ 120,00"
+    },
+    {
+        "nome": "Produto 2",
+        "codigo": 2587145970,
+        "valor":"R$ 200,00"
+    },
+    {
+        "nome": "Produto 3",
+        "codigo": 5421320077,
+        "valor": "R$ 50,00"
+    }
+]
