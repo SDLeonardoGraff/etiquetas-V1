@@ -89,7 +89,7 @@ const ImpressaoProdutos = () => {
         switch (selectedOption) {
             case 1:
                 displayValue = true;
-                layout = { display: 'grid', gridTemplateColumns: 'repeat(3, 33mm)', gap: '3mm' };
+                layout = { display: 'grid', gridTemplateColumns: 'repeat(3, 33mm)', gap: '1mm' };
                 data?.forEach((produto, index) => {
                     const barcodeId = `barcode-${escapeId(produto.Codigo)}`;
                     const productDiv = (
@@ -122,7 +122,7 @@ const ImpressaoProdutos = () => {
                 break;
             case 2:
                 displayValue = true;
-                layout = { display: 'grid', gridTemplateColumns: 'repeat(3, 33mm)', gap: '3mm' };
+                layout = { display: 'grid', gridTemplateColumns: 'repeat(3, 33mm)', gap: '1mm' };
                 items?.forEach((produto, index) => {
                     const barcodeId = `barcode-${escapeId(produto.Codigo)}`;
                     const productDiv = (
@@ -186,7 +186,7 @@ const ImpressaoProdutos = () => {
                     container.push(productDiv);
                 }); */
                 displayValue = false;
-                layout = { display: 'grid', gridTemplateColumns: 'repeat(3, 33mm)', gap: '3mm' };
+                layout = { display: 'grid', gridTemplateColumns: 'repeat(3, 33mm)', gap: '1mm' };
                 items?.forEach((produto, index) => {
                     const barcodeId = `barcode-${escapeId(produto.Codigo)}`;
                     const productDiv = (
@@ -234,7 +234,7 @@ const ImpressaoProdutos = () => {
                     container.push(productDiv);
                 });*/
                 displayValue = false;
-                layout = { display: 'grid', gridTemplateColumns: 'repeat(3, 33mm)', gap: '3mm' };
+                layout = { display: 'grid', gridTemplateColumns: 'repeat(3, 33mm)', gap: '1mm' };
                 items?.forEach((produto, index) => {
                     const barcodeId = `barcode-${escapeId(produto.Codigo)}`;
                     const productDiv = (
@@ -281,7 +281,7 @@ const ImpressaoProdutos = () => {
                     );
                     container.push(productDiv);
                 });  */
-                layout = { display: 'grid', gridTemplateColumns: 'repeat(3, 33mm)', gap: '3mm' };
+                layout = { display: 'grid', gridTemplateColumns: 'repeat(3, 33mm)', gap: '1mm' };
                 items?.forEach((produto, index) => {
                     const barcodeId = `barcode-${escapeId(produto.Codigo)}`;
                     const productDiv = (
@@ -344,7 +344,7 @@ const ImpressaoProdutos = () => {
                     );
                     container.push(productDiv);
                 }); */
-                layout = { display: 'grid', gridTemplateColumns: 'repeat(3, 33mm)', gap: '3mm' };
+                layout = { display: 'grid', gridTemplateColumns: 'repeat(3, 33mm)', gap: '1mm' };
                 items?.forEach((produto, index) => {
                     const barcodeId = `barcode-${escapeId(produto.Codigo)}`;
                     const productDiv = (
@@ -408,15 +408,15 @@ const ImpressaoProdutos = () => {
                     container.push(productDiv);
                 }); */
                 displayValue = true;
-                layout = { display: 'grid', gridTemplateColumns: '1fr', gap: '10mm' };
+                layout = { display: 'grid', gridTemplateColumns: '1fr', gap: '0mm' };
                 items?.forEach((produto, index) => {
                     const barcodeId = `barcode-${escapeId(produto.Codigo)}`;
                     const productDiv = (
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '3mm' }}>
+                        <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '0mm' }}>
                             <div className="product" style={{
                                 fontFamily: 'Arial, sans-serif',
                                 border: '1px solid #000',
-                                padding: '2mm',
+                                padding: '1mm',
                                 height: '30mm',
                                 width: '105mm',
                                 textAlign: 'left',
@@ -480,7 +480,7 @@ const ImpressaoProdutos = () => {
                     container.push(productDiv);
                 }); */
                 displayValue = false;
-                layout = { display: 'grid', gridTemplateColumns: '1fr',  gap: '0mm' };
+                layout = { display: 'grid', gridTemplateColumns: '1fr',  gap: '2mm' };
                 items?.forEach((produto, index) => {
                     const barcodeId = `barcode-${escapeId(produto.Codigo)}`;
                     const productDiv = (
@@ -522,7 +522,7 @@ const ImpressaoProdutos = () => {
                 });
                 break;
             case 9:
-                layout = { display: 'grid', gridTemplateColumns: 'repeat(3, 33mm)', gap: '3mm' };
+                layout = { display: 'grid', gridTemplateColumns: 'repeat(3, 33mm)', gap: '0mm' };
                 items?.forEach((produto, index) => {
                     const barcodeId = `barcode-${escapeId(produto.Codigo)}`;
                     const productDiv = (
@@ -679,6 +679,10 @@ const ImpressaoProdutos = () => {
         );
     };
 
+    function print(){
+        window.print();
+    } 
+
     return (
         <div>
             {/*<Sidebar className={styles.noPrint}/>*/}
@@ -693,7 +697,7 @@ const ImpressaoProdutos = () => {
                     <Sidebar />
                 </div>
                 <button className={styles.button} onClick={() => router.back()}>Voltar</button>
-                <button className={styles.button} onClick={() => window.print()}>Imprimir</button>
+                <button className={styles.button} onClick={() => print()}>Imprimir</button>
                 <select className={styles.select} onChange={handleSelectChange}>
                     <option value='default' selected>Selecione a etiqueta</option>
                     <option value='1'>Produto 1 - 2 Linhas</option>

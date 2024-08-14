@@ -1,13 +1,14 @@
 .body {
     display: flex;
-    justify-content: center;
-    /* align-items: center; */
+    /* justify-content: center;
+    align-items: center;*/ 
+    margin-top: 20px;
+    margin-left: 20px;
     background-color: #fff;
     color: #000;
     flex-direction: column;
-    margin-left: 2mm;
-    /* //gap: 100px; */
-    padding-top: 4%;
+    height: 100vh;
+    /* Garante que o contêiner centralize verticalmente */
 }
 
 .container {
@@ -15,26 +16,38 @@
     padding: 20px;
     background-color: #fff;
     width: 150mm;
+    /* Invertido para largura maior */
     height: 100mm;
+    /* Invertido para altura menor */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* transform: rotate(90deg);
+    transform-origin: center; */
 }
 
 .content {
     border: 2px solid #000;
     padding: 10px;
+    width: 100%;
+    /* Garante que a largura da div content ocupe todo o espaço disponível */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .remetente {
     text-align: center;
     font-weight: bold;
     margin-bottom: 20px;
-    margin: 5px 0;
 }
 
 .title {
     text-align: center;
     font-weight: bold;
     margin: 10px 0;
-    margin: 5px 0;
 }
 
 .button {
@@ -44,19 +57,14 @@
     border-radius: 10px;
     padding: 5px;
     margin-right: 40px;
-    /*border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;*/
 }
 
 .buttons {
     margin-right: 10px;
-    /*background-color: #fff;*/
 }
 
 .divImage {
-    background-color: #000; 
+    background-color: #000;
     padding: 20px;
     justify-content: space-evenly;
     flex-direction: row;
@@ -91,13 +99,24 @@
         padding: 20px;
         background-color: #fff;
         width: 150mm;
+        /* Largura maior para refletir a rotação */
         height: 100mm;
+        /* Altura menor para refletir a rotação */
         transform: rotate(90deg);
-        transform-origin: top left;
-        position: absolute;
-        top: 26%;
-        left: 72%;
-        margin-left: -50mm;
-        margin-top: -75mm;
+        /* Mantém a rotação no modo de impressão */
+        transform-origin: center;
+        /* Garante a rotação centralizada */
+    }
+
+    .body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        color: #000;
+        flex-direction: column;
+        height: 100vh;
+        margin-top: 0;
+        margin-left: 0;
     }
 }
