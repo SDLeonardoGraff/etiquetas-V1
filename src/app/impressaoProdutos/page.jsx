@@ -101,10 +101,11 @@ const ImpressaoProdutos = () => {
                             width: '33mm',
                             textAlign: 'center',
                             boxSizing: 'border-box',
-                            margin: '1mm',
+                            marginLeft: '1mm',
                             display: 'flex',
                             flexDirection: 'column',
-                            justifyContent: 'space-between'
+                            justifyContent: 'space-between',
+                            //borderRadius: 14,
                         }} key={index}>
                             <div style={{ fontSize: '6px', flexGrow: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', color: "#000" }}>
                                 {produto.Nome}
@@ -408,11 +409,11 @@ const ImpressaoProdutos = () => {
                     container.push(productDiv);
                 }); */
                 displayValue = true;
-                layout = { display: 'grid', gridTemplateColumns: '1fr', gap: '0mm' };
+                layout = { display: 'grid', gridTemplateColumns: '1fr', gap: '1mm' };
                 items?.forEach((produto, index) => {
                     const barcodeId = `barcode-${escapeId(produto.Codigo)}`;
                     const productDiv = (
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '0mm' }}>
+                        <div style={{ display: 'grid', gridTemplateColumns: '1fr' }}>
                             <div className="product" style={{
                                 fontFamily: 'Arial, sans-serif',
                                 border: '1px solid #000',
@@ -421,7 +422,7 @@ const ImpressaoProdutos = () => {
                                 width: '105mm',
                                 textAlign: 'left',
                                 boxSizing: 'border-box',
-                                margin: '1mm',
+                                //margin: '1mm',
                                 display: 'flex',
                                 flexDirection: 'column',
                                 justifyContent: 'space-between'
@@ -480,7 +481,7 @@ const ImpressaoProdutos = () => {
                     container.push(productDiv);
                 }); */
                 displayValue = false;
-                layout = { display: 'grid', gridTemplateColumns: '1fr',  gap: '2mm' };
+                layout = { display: 'grid', gridTemplateColumns: '1fr',  gap: '1mm' };
                 items?.forEach((produto, index) => {
                     const barcodeId = `barcode-${escapeId(produto.Codigo)}`;
                     const productDiv = (

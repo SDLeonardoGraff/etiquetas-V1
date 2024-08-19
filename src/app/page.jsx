@@ -19,7 +19,7 @@ export default function LoginPage() {
       return alert("Email ou senha não pode estar vázio!")
     } else {
       login(email, password);
-      console.log(password, email);
+      //console.log(password, email);
     }
   };
 
