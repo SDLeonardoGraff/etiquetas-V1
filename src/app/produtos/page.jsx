@@ -44,7 +44,7 @@ const Produtos = () => {
     const [logado, setLogado] = useState(false);
     const [visible, setVisible] = useState(false);
 
-    console.log(localStorage.getItem("logado"));
+    // console.log(localStorage.getItem("logado"));
 
     const handleFilterChange = (event) => {
         const { name, value } = event.target;
