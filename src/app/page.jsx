@@ -46,6 +46,17 @@ export default function LoginPage() {
     }
   }
 
+  const handleSubmitNovo = async (e) => {
+    e.preventDefault();
+
+    if (email === "" || password == "") {
+      return alert("Email ou senha não pode estar vázio!")
+    } else {
+      login(email, password);
+      //console.log(password, email);
+    }
+  }
+
     const handleSubmit = async (e) => {
       e.preventDefault();
 

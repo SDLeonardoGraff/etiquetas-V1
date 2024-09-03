@@ -46,7 +46,7 @@ const Produtos = () => {
     const [visible, setVisible] = useState(false);
     // const { globalState, updateGlobalState } = useGlobalContext();
 
-    console.log(localStorage.getItem("logado"));
+    // console.log(localStorage.getItem("logado"));
 
     const handleFilterChange = (event) => {
         const { name, value } = event.target;
