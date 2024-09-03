@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import Sidebar from "../../../components/sidebar/Sidebar";
 import Hour from "../../../components/hour/Hour";
 import Image from 'next/image';
+import { useGlobalContext } from '@/context/GlobalContext';
 //import { useGlobalContext } from '@/context/GlobalContext';
 //import ProtectedRoute from '../../../components/ProtectedRoute';
 
@@ -13,7 +14,7 @@ const Dashboard = () => {
     const router = useRouter();
     const [loading, setLoading] = useState(false);
     const [logado, setLogado] = useState(false);
-
+    const { globalState, updateGlobalState } = useGlobalContext();
     //const logado = localStorage.getItem("logado");
 
     useEffect(() => {
@@ -33,6 +34,8 @@ const Dashboard = () => {
         router.push("/");
         localStorage.setItem("logado", false);
     }
+
+    console.log(globalState);
 
     return (
         <div>

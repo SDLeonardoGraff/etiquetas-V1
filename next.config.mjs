@@ -7,12 +7,16 @@ const nextConfig = {
                 destination: 'https://erp.sdbr.app/api/:path*',
             },
             {
-                source: '/auth/:path*',
-                destination: 'https://backend.sdbr.app/auth/:path*',
+                source: '/items/:path*',
+                destination: 'https://backend.sdbr.app/items/:path*',
             },
             {
                 source: '/users/:path*',
                 destination: 'https://backend.sdbr.app/users/:path*'
+            },
+            {
+                source: '/auth/:path',
+                destination: 'https://apimongo.sdbr.app/auth/:path*'
             }
         ];
     },

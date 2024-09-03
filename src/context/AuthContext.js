@@ -13,6 +13,9 @@ const AuthContext = () => {
     const [errors, setErrors] = useState(null);
 
     async function login(email, senha) {
+
+        console.log(email, senha);
+
         setLoading(true);
         try {
             const response = await fetch("/auth/login", {
@@ -27,7 +30,7 @@ const AuthContext = () => {
             });
             const json = await response.json();
             console.log(json);
-            getConfig(json.data.access_token, email);
+            // getConfig(json.data.access_token, email);
         } catch (erro) {
             alert(erro);
             setErrors(erro);

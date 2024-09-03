@@ -9,6 +9,7 @@ export const GlobalProvider = ({ children }) => {
         pedido: null,
         etiqueta: null,
         produtos: null,
+        config: null,
     });
 
     const updateGlobalState = (newState) => {

@@ -23,6 +23,7 @@ const Produtos = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPorPagina = 8;
     const items = globalState.produtos;
+    const configApp = globalState.config;
     const [showAlert, setShowAlert] = useState(false);
     const [message1, setMessage1] = useState("");
     const [message2, setMessage2] = useState("");
@@ -43,6 +44,7 @@ const Produtos = () => {
     const [loadingDados, setLoadingDados] = useState(false);
     const [logado, setLogado] = useState(false);
     const [visible, setVisible] = useState(false);
+    // const { globalState, updateGlobalState } = useGlobalContext();
 
     console.log(localStorage.getItem("logado"));
 
@@ -126,9 +128,12 @@ const Produtos = () => {
                 headers: {
                     "Content-Type": "application/json",
                     "Accept": "application/json",
-                    "Authorization-Token": process.env.NEXT_PUBLIC_TOKEN,
-                    "User": process.env.NEXT_PUBLIC_USER,
-                    "App": process.env.NEXT_PUBLIC_APP,
+                    // "Authorization-Token": process.env.NEXT_PUBLIC_TOKEN,
+                    // "User": process.env.NEXT_PUBLIC_USER,
+                    // "App": process.env.NEXT_PUBLIC_APP,
+                    "Authorization-Token": configApp.erp_token,
+                    "User": configApp.erp_user,
+                    "App": configApp.erp_app,
                 }
             })
             const json = await response.json();
@@ -188,6 +193,8 @@ const Produtos = () => {
         }
         return acc;
     }, []);
+
+    console.log(currentItems);
 
     /* const groupedProducts = setNewArray.reduce((acc, product) => {
         
