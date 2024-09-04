@@ -15,6 +15,23 @@ const Button = ({url, setLoading}) => {
         console.log("Carregando...")
     }
 
+    function getConfig() {
+        if(typeof window !== "undefined") {
+            const storedConfig = localStorage.getItem("dadosLogin");
+            if(storedConfig !== null) {
+                try {
+                    const config = JSON.parse(storedConfig);
+                    return config;
+                } catch(error) {
+                    console.error(error);
+                }
+            }       
+        }
+        return [];
+    };
+
+    const appConfig = getConfig();
+
     const handleClick = async () => {
         setLoading(true);
         try{
@@ -22,9 +39,9 @@ const Button = ({url, setLoading}) => {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization-Token": process.env.NEXT_PUBLIC_TOKEN,
-                "User": process.env.NEXT_PUBLIC_USER,
-                "App": process.env.NEXT_PUBLIC_APP,
+                "Authorization-Token": appConfig.erp_token,
+                "User": appConfig.erp_user,
+                "App": appConfig.erp_app,
             }
         })
         const json = await response.json();

@@ -9,6 +9,13 @@
     transition: 0.5s;
     padding-top: 60px;
     z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar-content {
+    flex-grow: 1; /* Permite que o conteúdo principal ocupe o espaço restante */
 }
 
 .sidebar a {

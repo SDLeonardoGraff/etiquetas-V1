@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import Styles from './buttonProdutos.module.css';
 import { useGlobalContext } from "@/context/GlobalContext";
 
-const Button = ({valor, setLoading}) => {
+const Button = ({ valor, setLoading }) => {
 
     const { globalState, updateGlobalState } = useGlobalContext();
 
@@ -15,27 +15,42 @@ const Button = ({valor, setLoading}) => {
         console.log("Carregando...")
     } */
 
-    
+    function getConfig() {
+        if (typeof window !== "undefined") {
+            const storedConfig = localStorage.getItem("dadosLogin");
+            if (storedConfig !== null) {
+                try {
+                    const config = JSON.parse(storedConfig);
+                    return config;
+                } catch (error) {
+                    console.error(error);
+                }
+            }
+        }
+        return [];
+    };
+
+    const configApp = getConfig();
 
     const handleClick = async () => {
         //console.log(valor);
         setLoading(true);
-        try{
+        try {
             const response = await fetch(`/api/request/Produtos/Pesquisar?codigo=${valor}`, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization-Token": process.env.NEXT_PUBLIC_TOKEN,
-                "User": process.env.NEXT_PUBLIC_USER,
-                "App": process.env.NEXT_PUBLIC_APP,
-            }
-        })
-        const json = await response.json();
-        //console.log(json);
-        updateGlobalState({produtos: json});
-        } catch (error){
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization-Token": configApp.erp_token,
+                    "User": configApp.erp_user,
+                    "App": configApp.erp_app,
+                }
+            })
+            const json = await response.json();
+            //console.log(json);
+            updateGlobalState({ produtos: json });
+        } catch (error) {
             alert(error);
-        } finally{
+        } finally {
             setLoading(false);
             return;
         }

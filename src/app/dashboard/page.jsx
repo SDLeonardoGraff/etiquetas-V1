@@ -30,12 +30,27 @@ const Dashboard = () => {
         checkLogin();
     }, []);
 
-    function handleLogout() {
-        router.push("/");
-        localStorage.setItem("logado", false);
-    }
+    // function handleLogout() {
+    //     router.push("/");
+    //     localStorage.setItem("logado", false);
+    // }
 
-    console.log(globalState);
+    function getConfig() {
+        if(typeof window !== "undefined") {
+            const storedConfig = localStorage.getItem("dadosLogin");
+            if(storedConfig !== null) {
+                try {
+                    const config = JSON.parse(storedConfig);
+                    return config;
+                } catch(error) {
+                    console.error(error);
+                }
+            }       
+        }
+        return [];
+    };
+
+    console.info(getConfig());
 
     return (
         <div>

@@ -23,7 +23,7 @@ const Produtos = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPorPagina = 8;
     const items = globalState.produtos;
-    const configApp = globalState.config;
+    // const configApp = globalState.config;
     const [showAlert, setShowAlert] = useState(false);
     const [message1, setMessage1] = useState("");
     const [message2, setMessage2] = useState("");
@@ -55,6 +55,8 @@ const Produtos = () => {
             [name]: value,
         });
     };
+
+    console.info(globalState);
 
     /* useEffect(() => {
         setLoading(true);
@@ -108,6 +110,23 @@ const Produtos = () => {
         });
     };
 
+    function getConfig() {
+        if(typeof window !== "undefined") {
+            const storedConfig = localStorage.getItem("dadosLogin");
+            if(storedConfig !== null) {
+                try {
+                    const config = JSON.parse(storedConfig);
+                    return config;
+                } catch(error) {
+                    console.error(error);
+                }
+            }       
+        }
+        return [];
+    };
+
+    const configApp = getConfig();
+
     console.log(produtosFilter);
 
     const buildQuery = () => {
@@ -120,6 +139,7 @@ const Produtos = () => {
     };
 
     const handleSearch = async () => {
+        handleFilter();
         const url = buildQuery();
         console.log(url);
         try {
